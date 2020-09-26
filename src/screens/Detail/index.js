@@ -11,7 +11,7 @@ const Detail = () => {
     }, [id]);
 
     if (!person) {
-        return <h1>Loading...</h1>
+        return <h1>Loading...</h1>;
     }
 
     return <h1 >{person.name}</h1>;

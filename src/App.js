@@ -25,7 +25,7 @@ const App = () => {
 
             <Switch>
                 {/*Passando a rota da pagina detail */}
-                <Route path='/detail'>
+                <Route path='/detail/:id'>
                     < Detail />
                 </Route>
                 {/*Passando a rota da pagina home */}
