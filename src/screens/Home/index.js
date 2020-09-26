@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { doGet } from '../../helpers/ApiHelper';
+import { Link } from 'react-router-dom';
+import { doGet, getIdFromUrl } from '../../helpers/ApiHelper';
 
 
 const Home = () => {
@@ -11,12 +12,22 @@ const Home = () => {
         doGet('/people').then(response => setpeople(response.results));
 
     });
+    if (!people || !people.length) {
+        return <h1>Loading...</h1>;
+    }
+    //    console.log(people);
+    const peopleList = people.map(p => {
 
+        const id = getIdFromUrl(p.url);
+        return (<li key={p.url}>
+            <Link to={`/detail/${id}`}> {p.name}</Link></li>)
+    });
 
-    console.log(people);
-
-    return <h1 > Home </h1>;
+    return (<>
+        <h1 > Home </h1>
+        <ul>{peopleList}</ul>
+    </>
+    );
 };
-
 
 export default Home;

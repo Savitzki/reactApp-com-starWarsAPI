@@ -18,7 +18,7 @@ const App = () => {
                     <Link to='/'>Home</Link>
                 </li>
                 <li>
-                    <Link to='/Detail'>Detail</Link>
+                    <Link to='/detail'>Detail</Link>
                 </li>
 
             </ul>
